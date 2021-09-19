@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ildc_hw.iml" filepath="$PROJECT_DIR$/ildc_hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/ildc_hw_android.iml" filepath="$PROJECT_DIR$/android/ildc_hw_android.iml" />
+    </modules>
+  </component>
+</project>
