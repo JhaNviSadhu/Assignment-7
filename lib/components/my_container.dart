@@ -32,7 +32,7 @@ class ThirdContainerRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         MyContainer(
           height: 100,
@@ -58,7 +58,7 @@ class SecondContainerRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         MyContainer(
           height: 90,
@@ -89,13 +89,16 @@ class FirstContainerRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         MyContainer(
           colors: const Color.fromRGBO(92, 15, 0, 1),
           height: 120,
           width: MediaQuery.of(context).size.width / 2.2,
         ),
+        // SizedBox(
+        //   width: 10,
+        // ),
         MyContainer(
           colors: const Color.fromRGBO(40, 78, 19, 1),
           height: 120,

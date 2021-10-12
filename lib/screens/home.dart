@@ -11,86 +11,186 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  @override
-  void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    super.initState();
+  Widget _portraitMode() {
+    return SingleChildScrollView(
+      child: SafeArea(
+        child: Column(
+          children: [
+            const FirstContainerRow(),
+            const SizedBox(height: 15),
+            const SecondContainerRow(),
+            const SizedBox(height: 15),
+            const ThirdContainerRow(),
+            const SizedBox(height: 10),
+            const FirstTextRow(),
+            const SizedBox(height: 10),
+            const Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+            Container(
+              // color: Colors.red,
+              height: MediaQuery.of(context).size.height / 2.9,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      Spacer(
+                        flex: 3,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                      Spacer(
+                        flex: 7,
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _landscapeMode() {
+    return SingleChildScrollView(
+      child: SafeArea(
+        left: false,
+        child: Column(
+          children: [
+            const FirstContainerRow(),
+            const SizedBox(height: 15),
+            const SecondContainerRow(),
+            const SizedBox(height: 15),
+            const ThirdContainerRow(),
+            const SizedBox(height: 10),
+            const FirstTextRow(),
+            const SizedBox(height: 10),
+            const Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+            Container(
+              // color: Colors.red,
+              height: MediaQuery.of(context).size.height / 2.9,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      Spacer(
+                        flex: 3,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                      Spacer(
+                        flex: 7,
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      MyText(
+                        fontsize: 40,
+                        weight: FontWeight.w500,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                      ),
+                      MyText(
+                        fontsize: 30,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SafeArea(
-          child: Column(
-            children: [
-              const FirstContainerRow(),
-              const SizedBox(height: 15),
-              const SecondContainerRow(),
-              const SizedBox(height: 15),
-              const ThirdContainerRow(),
-              const SizedBox(height: 20),
-              const FirstTextRow(),
-              const SizedBox(height: 15),
-              const Divider(
-                thickness: 2,
-                color: Colors.black,
-              ),
-              Spacer(),
-              Container(
-                // color: Colors.red,
-                height: MediaQuery.of(context).size.height / 2.8,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        MyText(
-                          fontsize: 40,
-                          weight: FontWeight.w500,
-                        ),
-                        SizedBox(height: 60),
-                        MyText(
-                          fontsize: 30,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        MyText(
-                          fontsize: 50,
-                          weight: FontWeight.w500,
-                        ),
-                        MyText(
-                          fontsize: 30,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        MyText(
-                          fontsize: 50,
-                          weight: FontWeight.w500,
-                        ),
-                        SizedBox(height: 30),
-                        MyText(
-                          fontsize: 30,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Spacer(),
-            ],
-          ),
-        ),
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          if (orientation == Orientation.portrait) {
+            return _portraitMode();
+          } else if (orientation == Orientation.landscape) {
+            return _landscapeMode();
+          } else {
+            return Container(
+              color: Colors.red,
+            );
+          }
+        },
       ),
     );
   }
@@ -103,23 +203,26 @@ class FirstTextRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.baseline,
-      textBaseline: TextBaseline.alphabetic,
-      children: const [
-        MyText(
-          fontsize: 50,
-          weight: FontWeight.w400,
-        ),
-        MyText(
-          fontsize: 30,
-        ),
-        MyText(
-          fontsize: 50,
-          weight: FontWeight.w400,
-        ),
-      ],
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.alphabetic,
+        children: const [
+          MyText(
+            fontsize: 40,
+            weight: FontWeight.w400,
+          ),
+          MyText(
+            fontsize: 30,
+          ),
+          MyText(
+            fontsize: 40,
+            weight: FontWeight.w400,
+          ),
+        ],
+      ),
     );
   }
 }

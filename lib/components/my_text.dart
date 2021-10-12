@@ -18,6 +18,7 @@ class MyText extends StatelessWidget {
         color: Colors.black,
         fontWeight: weight,
       ),
+      softWrap: true,
     );
   }
 }

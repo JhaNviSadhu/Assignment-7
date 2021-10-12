@@ -120,7 +120,7 @@ class _Assignment9State extends State<Assignment9> {
                             onPressed: () {
                               setState(() {
                                 // data.remove(controller.text);
-                                
+
                                 isRemove = !isRemove;
                                 print(data);
                               });
@@ -149,7 +149,7 @@ class _Assignment9State extends State<Assignment9> {
       print(controller.text.trim());
       if (data.length < 10 &&
           controller.text.trim().isNotEmpty &&
-          (controller.text != " ")) {
+          (controller.text != " ")) { 
         data.add(controller.text.trim());
 
         print(data);
